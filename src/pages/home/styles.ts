@@ -28,6 +28,34 @@ export const FormContainer = styled.div`
   flex-wrap: wrap;
 `
 
+const BaseInput = styled.input`
+  background: transparent;
+  height: 4rem;
+  border: 0;
+  border-bottom: 2px solid ${(props) => props.theme['gray-500']};
+  font-weight: bold;
+  font-size: 1.8rem;
+  padding: 0 0.8rem;
+  color: ${(props) => props.theme['gray-100']};
+
+  &::placeholder {
+    color: ${(props) => props.theme['gray-500']};
+  }
+
+  &:focus {
+    box-shadow: none;
+    border-color: ${(props) => props.theme['green-500']};
+  }
+`
+
+export const TaskInput = styled(BaseInput)`
+  flex: 1;
+`
+
+export const MinutesAmountInput = styled(BaseInput)`
+  width: 6.4rem;
+`
+
 export const CountdownContainer = styled.div`
   font-family: 'Roboto Mono', monospace;
   font-size: 16rem;
@@ -53,4 +81,31 @@ export const Separator = styled.div`
   justify-content: center;
 `
 
-export const Button = styled.button``
+export const StartCountdownButton = styled.button`
+  width: 100%;
+  border: 0;
+  padding: 1.6rem;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.8rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  background: ${(props) => props.theme['green-500']};
+  color: ${(props) => props.theme['gray-100']};
+  transition: background 150ms ease-in-out;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    background: ${(props) => props.theme['green-700']};
+  }
+`
