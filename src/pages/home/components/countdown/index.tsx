@@ -31,7 +31,6 @@ export function Countdown() {
         } else {
           setSecondsPassed(secondsDifference)
         }
-        setSecondsPassed
       }, 1000)
     }
 

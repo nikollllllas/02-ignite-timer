@@ -31,7 +31,7 @@ export function Home() {
     resolver: zodResolver(newCycleFormSchema),
     defaultValues: {
       task: '',
-      minutesAmount: 25
+      minutesAmount: 0
     }
   })
 

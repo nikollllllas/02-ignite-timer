@@ -28,9 +28,11 @@ export function NewCycleForm() {
       <MinutesAmountInput
         id='minutesAmount'
         type='number'
-        disabled={!!activeCycle}
         placeholder='00'
-        step={1}
+        step={5}
+        min={5}
+        max={60}
+        disabled={!!activeCycle}
         {...register('minutesAmount', { valueAsNumber: true })}
       />
 

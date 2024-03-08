@@ -5,7 +5,7 @@ interface Cycle {
   task: string
   minutesAmount: number
   startDate: Date
-  interrputedDate?: Date
+  interruptedDate?: Date
   finishedDate?: Date
 }
 
@@ -25,15 +25,15 @@ interface CyclesContextType {
   interruptCurrentCycle: () => void
 }
 
-export const CyclesContext = createContext<CyclesContextType>(
-  {} as CyclesContextType
-)
+export const CyclesContext = createContext({} as CyclesContextType)
 
 interface CyclesContextProviderProps {
   children: ReactNode
 }
 
-export function CyclesContextProvider({ children }: CyclesContextProviderProps) {
+export function CyclesContextProvider({
+  children
+}: CyclesContextProviderProps) {
   const [cycles, setCycles] = useState<Cycle[]>([])
   const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
@@ -60,7 +60,7 @@ export function CyclesContextProvider({ children }: CyclesContextProviderProps) 
     const id = String(new Date().getTime())
 
     const newCycle: Cycle = {
-      id: id,
+      id,
       minutesAmount: data.minutesAmount,
       task: data.task,
       startDate: new Date()
@@ -69,7 +69,6 @@ export function CyclesContextProvider({ children }: CyclesContextProviderProps) 
     setCycles((state) => [...state, newCycle])
     setActiveCycleId(id)
     setAmountSecondsPassed(0)
-
   }
 
   function interruptCurrentCycle() {
