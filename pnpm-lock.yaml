@@ -14,6 +14,9 @@ dependencies:
   date-fns:
     specifier: ^3.3.1
     version: 3.3.1
+  immer:
+    specifier: ^10.0.4
+    version: 10.0.4
   localforage:
     specifier: ^1.10.0
     version: 1.10.0
@@ -1532,6 +1535,10 @@ packages:
 
   /immediate@3.0.6:
     resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
+    dev: false
+
+  /immer@10.0.4:
+    resolution: {integrity: sha512-cuBuGK40P/sk5IzWa9QPUaAdvPHjkk1c+xYsd9oZw+YQQEV+10G0P5uMpGctZZKnyQ+ibRO08bD25nWLmYi2pw==}
     dev: false
 
   /import-fresh@3.3.0:
